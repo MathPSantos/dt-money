@@ -11,7 +11,7 @@ export const Table = styled.table`
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 8px;
-  /* margin-top: 24px; */
+  margin-top: 24px;
 
   td {
     padding: 20px 32px;

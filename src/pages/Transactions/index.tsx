@@ -1,4 +1,5 @@
 import { Header, Summary } from "../../components";
+import { SearchForm } from "./components";
 
 import * as T from "./styles";
 
@@ -9,6 +10,8 @@ export function Transactions() {
       <Summary />
 
       <T.Container>
+        <SearchForm />
+
         <T.Table>
           <tbody>
             <tr>
