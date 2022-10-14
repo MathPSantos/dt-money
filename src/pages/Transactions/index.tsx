@@ -4,6 +4,7 @@ import { Header, Summary } from "../../components";
 import { SearchForm } from "./components";
 
 import * as T from "./styles";
+import { dateFormatter, priceFormatter } from "../../utils/formatter";
 
 type Transaction = {
   id: number;
@@ -32,11 +33,12 @@ export function Transactions() {
                 <td width="40%">{transaction.description}</td>
                 <td>
                   <T.PriceHighlight variant={transaction.type}>
-                    {transaction.price}
+                    {transaction.type === "outcome" && "- "}
+                    {priceFormatter.format(transaction.price)}
                   </T.PriceHighlight>
                 </td>
                 <td>{transaction.category}</td>
-                <td>{transaction.createdAt}</td>
+                <td>{dateFormatter.format(new Date(transaction.createdAt))}</td>
               </tr>
             ))}
           </tbody>
